@@ -1,0 +1,17 @@
+{
+  "name": "seed-graph",
+  "version": "0.1.0",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "auth": "graph auth https://api.thegraph.com/deploy/ $GRAPH_ACCESS_TOKEN",
+    "deploy": "graph deploy dan13ram/seed-graph --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ --debug",
+    "format": "prettier --ignore-path .gitignore --write \"{*,**/*}.{ts,tsx,js,jsx,json,md,sol}\""
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.18.0",
+    "@graphprotocol/graph-ts": "0.18.0",
+    "mustache": "^4.0.1"
+  }
+}

@@ -1,0 +1,18 @@
+type Transfer @entity {
+  id: ID!
+  txHash: Bytes!
+  from: Bytes!
+  to: Bytes!
+  amount: BigInt!
+  token: Bytes!
+  timestamp: BigInt!
+}
+
+type User @entity {
+  id: ID!
+  address: Bytes!
+  pSeedBalance: BigInt!
+  pSeedTransfers: [Transfer!]!
+  seedBalance: BigInt!
+  seedTransfers: [Transfer!]!
+}

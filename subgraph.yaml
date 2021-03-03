@@ -1,0 +1,45 @@
+specVersion: 0.0.2
+description: Seed Graph
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: pSEED
+    network: mainnet
+    source:
+      address: '0x34a01c0a95b0592cc818cd846c3cf285d6c85a31'
+      abi: ERC20
+      startBlock: 11162075
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - User
+      abis:
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handlepSEED
+      file: ./src/mappings.ts
+  - kind: ethereum/contract
+    name: SEED
+    network: mainnet
+    source:
+      address: '0x30cf203b48edaa42c3b4918e955fed26cd012a3f'
+      abi: ERC20
+      startBlock: 10193914
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - User
+      abis:
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleSEED
+      file: ./src/mappings.ts
