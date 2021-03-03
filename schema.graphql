@@ -10,7 +10,7 @@ type Transfer @entity {
 
 type UserToken @entity {
   id: ID!
-  address: Bytes!
+  address: String!
   pSeedBalance: BigInt!
   pSeedTransfers: [Transfer!]!
   seedBalance: BigInt!

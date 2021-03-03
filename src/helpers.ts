@@ -12,7 +12,7 @@ import {
 
 export function createUserToken(address: Bytes): UserToken {
   let user = new UserToken(address.toHexString());
-  user.address = address;
+  user.address = address.toHexString();
   user.pSeedBalance = BigInt.fromI32(0);
   user.pSeedTransfers = new Array<string>();
   user.seedBalance = BigInt.fromI32(0);
