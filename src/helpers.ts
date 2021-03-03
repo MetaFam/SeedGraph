@@ -1,5 +1,5 @@
 import {Address, Bytes, BigInt} from '@graphprotocol/graph-ts';
-import {Transfer, User} from '../generated/schema';
+import {Transfer, UserToken} from '../generated/schema';
 
 import {
   Transfer as SEEDTransferEvent,
@@ -10,8 +10,8 @@ import {
   ERC20 as pSEED,
 } from '../generated/pSEED/ERC20';
 
-export function createUser(address: Bytes): User {
-  let user = new User(address.toHexString());
+export function createUserToken(address: Bytes): UserToken {
+  let user = new UserToken(address.toHexString());
   user.address = address;
   user.pSeedBalance = BigInt.fromI32(0);
   user.pSeedTransfers = new Array<string>();
