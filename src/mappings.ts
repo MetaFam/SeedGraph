@@ -41,12 +41,12 @@ export function handleSEED(event: SEEDTransferEvent): void {
   let tokenInstance = SEED.bind(event.address);
 
   let fromBalance = getSEEDBalance(tokenInstance, event.params.from);
-  if (fromBalance != null) {
+  if (fromBalance !== null) {
     fromUserToken.seedBalance = fromBalance as BigInt;
   }
 
   let toBalance = getSEEDBalance(tokenInstance, event.params.to);
-  if (toBalance != null) {
+  if (toBalance !== null) {
     toUserToken.seedBalance = toBalance as BigInt;
   }
 
@@ -78,12 +78,12 @@ export function handlepSEED(event: pSEEDTransferEvent): void {
   let tokenInstance = pSEED.bind(event.address);
 
   let fromBalance = getpSEEDBalance(tokenInstance, event.params.from);
-  if (fromBalance != null) {
+  if (fromBalance !== null) {
     fromUserToken.pSeedBalance = fromBalance as BigInt;
   }
 
   let toBalance = getpSEEDBalance(tokenInstance, event.params.to);
-  if (toBalance != null) {
+  if (toBalance !== null) {
     toUserToken.pSeedBalance = toBalance as BigInt;
   }
 
